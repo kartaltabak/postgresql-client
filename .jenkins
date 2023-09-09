@@ -2,7 +2,9 @@
 
 dockerBuildPipeline(
         mainBranchCron: '@monthly',
-        baseImage: 'alpine',
-        registryRepoName: 'kartaltabak/postgresql-client',
-        imageTestCommand: 'psql --help'
+        imageBuilder: [
+                baseImage       : 'alpine',
+                registryRepoName: 'kartaltabak/postgresql-client',
+                imageTestCommand: 'psql --help'
+        ]
 )
